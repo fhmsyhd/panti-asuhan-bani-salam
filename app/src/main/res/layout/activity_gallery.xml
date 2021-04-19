@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
     tools:context=".view.about.gallery.GalleryActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -22,4 +25,15 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-</RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGaleri"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="11dp"
+            tools:listitem="@layout/item_galeri" />
+
+
+    </RelativeLayout>
+</ScrollView>

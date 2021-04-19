@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "967042786997",
+    "firebase_url": "https://peduli-rumah-yatim-default-rtdb.firebaseio.com",
+    "project_id": "peduli-rumah-yatim",
+    "storage_bucket": "peduli-rumah-yatim.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967042786997:android:b45458c2073ee16db6c0fc",
+        "android_client_info": {
+          "package_name": "org.fhmsyhdproject.pantiasuhanbanisalam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967042786997-1tlqig365kkl74va0k81bnhp3csbh3k2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.fhmsyhdproject.pantiasuhanbanisalam",
+            "certificate_hash": "fcc33fa0335279633b3b9f63b7bb94cfef1fcbd9"
+          }
+        },
+        {
+          "client_id": "967042786997-ce4gr6tqig4j0741l2i65io54uls3hot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.fhmsyhdproject.pantiasuhanbanisalam",
+            "certificate_hash": "077932e99fbd711b41eb510f5f6c1b8c56356773"
+          }
+        },
+        {
+          "client_id": "967042786997-ehdebaetlbtmmntp9k62k329vc47keut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYbfXcZ47-TShtIMxby2X7UID_ih_WvVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967042786997-ehdebaetlbtmmntp9k62k329vc47keut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967042786997:android:54aae7b1da9d1dc0b6c0fc",
+        "android_client_info": {
+          "package_name": "org.fhmsyhdproject.pantiasuhandhuafabanisalam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967042786997-n7smjsid9p5vtfki4k5j0n3i6bbcn0hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.fhmsyhdproject.pantiasuhandhuafabanisalam",
+            "certificate_hash": "fcc33fa0335279633b3b9f63b7bb94cfef1fcbd9"
+          }
+        },
+        {
+          "client_id": "967042786997-ehdebaetlbtmmntp9k62k329vc47keut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYbfXcZ47-TShtIMxby2X7UID_ih_WvVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967042786997-ehdebaetlbtmmntp9k62k329vc47keut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
