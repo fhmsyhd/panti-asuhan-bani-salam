@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.firebase.database.*
@@ -62,13 +63,14 @@ class GalleryActivity : AppCompatActivity() {
                                         .into(itemView.imGambar)
                             },
                             { position, item ->
-                                val intent = Intent(this@GalleryActivity, DetailContentActivity::class.java)
-                                intent.putExtra("detail", item)
-                                startActivity(intent)
+//                                val intent = Intent(this@GalleryActivity, DetailContentActivity::class.java)
+//                                intent.putExtra("detail", item)
+//                                startActivity(intent)
                             }
                     )
                     binding.rvGaleri.layoutManager =
-                            LinearLayoutManager(this@GalleryActivity, LinearLayoutManager.VERTICAL, false)
+                            GridLayoutManager(this@GalleryActivity, 3)
+//                            LinearLayoutManager(this@GalleryActivity, LinearLayoutManager.VERTICAL, false)
                     binding.rvGaleri.adapter = adapterGaleri
                 }
             }

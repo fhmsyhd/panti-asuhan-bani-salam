@@ -59,9 +59,9 @@ class AdministratorActivity : AppCompatActivity() {
                                         .into(itemView.img_poster_pengurus)
                             },
                             { position, item ->
-                                val intent = Intent(this@AdministratorActivity, DetailContentActivity::class.java)
-                                intent.putExtra("detail", item)
-                                startActivity(intent)
+//                                val intent = Intent(this@AdministratorActivity, DetailContentActivity::class.java)
+//                                intent.putExtra("detail", item)
+//                                startActivity(intent)
                             }
                     )
                     binding.rvPengurus.layoutManager =
