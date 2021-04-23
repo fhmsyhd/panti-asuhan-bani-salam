@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam">
-        <activity android:name=".view.about.gallery.GalleryActivity"></activity>
+        <activity android:name=".view.about.gallery.DetailGalleryActivity"></activity>
+        <activity android:name=".view.about.gallery.GalleryActivity" />
         <activity android:name=".view.about.location.LocationActivity" />
         <activity android:name=".view.about.member.AdministratorActivity" />
         <activity android:name=".view.about.member.ChildrenActivity" />

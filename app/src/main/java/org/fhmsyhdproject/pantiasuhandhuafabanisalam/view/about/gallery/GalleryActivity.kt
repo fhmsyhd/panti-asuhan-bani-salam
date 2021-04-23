@@ -22,6 +22,7 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.R
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Galeri
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.ActivityGalleryBinding
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.AdapterUtil
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.article.ArticleActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.detail.DetailContentActivity
 
 class GalleryActivity : AppCompatActivity() {
@@ -63,9 +64,9 @@ class GalleryActivity : AppCompatActivity() {
                                         .into(itemView.imGambar)
                             },
                             { position, item ->
-//                                val intent = Intent(this@GalleryActivity, DetailContentActivity::class.java)
-//                                intent.putExtra("detail", item)
-//                                startActivity(intent)
+                                val intent = Intent(this@GalleryActivity, DetailGalleryActivity::class.java)
+                                intent.putExtra("galeri", item)
+                                startActivity(intent)
                             }
                     )
                     binding.rvGaleri.layoutManager =
@@ -86,13 +87,3 @@ class GalleryActivity : AppCompatActivity() {
         return true
     }
 }
-//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-//    savedInstanceState: Bundle?
-//    ): View? {
-//        binding = ActivityGalleryBinding.inflate(inflater, container, false)
-//
-//        return binding.root
-//    }
-//}
-
-
