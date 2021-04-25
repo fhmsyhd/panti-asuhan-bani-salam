@@ -2,8 +2,10 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about
 
 import android.app.Activity
 import android.content.Intent
+import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract.Intents.Insert.ACTION
 import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
@@ -67,7 +69,7 @@ class AboutFragment : Fragment() {
         }
 
         binding.btnLocation.setOnClickListener {
-
+            changeActivity(openMaps()::class.java)
         }
     }
 
@@ -146,6 +148,16 @@ class AboutFragment : Fragment() {
         val intent = Intent(Intent.ACTION_DIAL)
         intent.data = Uri.parse("tel:$number")
         startActivity(intent)
+    }
+
+    private fun openMaps(){
+        val gmmIntentUri =
+            Uri.parse("geo:0,0?q=Panti+Asuhan+Yatim+Bani+Salam")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        startActivity(mapIntent)
+//        val intent = Intent(Intent.ACTION_VIEW)
+//                startActivity(intent)
     }
 
     private fun changeActivity(activity: Class<*>){
