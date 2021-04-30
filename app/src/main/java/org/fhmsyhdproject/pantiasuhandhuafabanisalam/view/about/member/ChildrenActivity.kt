@@ -53,9 +53,9 @@ class ChildrenActivity : AppCompatActivity() {
                             listAnak,
                             { position, itemView, item ->
                                 itemView.tv_nama.text = item.name
-                                itemView.tv_tanggal_lahir.text = item.tglahir
-                                itemView.tv_umur.text = item.umur
-                                itemView.tv_asal.text = item.asal
+                                itemView.tv_tanggal_lahir.text = item.kelas
+                                itemView.tv_umur.text = item.status
+//                                itemView.tv_asal.text = item.asal
                                 Glide.with(this@ChildrenActivity).load(item.image)
                                         .into(itemView.img_anak)
                             },

@@ -105,6 +105,7 @@ dependencies {
     //glide library for image
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
+    compile 'com.github.chathuralakmal:AndroidImagePopup:1.2.2'
     
     //deeplink
 //    implementation 'com.airbnb:deeplinkdispatch:3.1.1'

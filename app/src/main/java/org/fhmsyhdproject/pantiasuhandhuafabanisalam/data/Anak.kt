@@ -8,7 +8,6 @@ data class Anak (
         var id: String = "",
         var image: String = "",
         var name: String = "",
-        var tglahir : String = "",
-        var umur : String = " ",
-        var asal : String = " "
+        var kelas : String = "",
+        var status : String = " "
 ) : Serializable
