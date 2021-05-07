@@ -53,6 +53,7 @@ class ChildrenActivity : AppCompatActivity() {
                             listAnak,
                             { position, itemView, item ->
                                 itemView.tv_nama.text = item.name
+                                itemView.tv_nomor.text = item.nomor
                                 itemView.tv_tanggal_lahir.text = item.kelas
                                 itemView.tv_umur.text = item.status
 //                                itemView.tv_asal.text = item.asal

@@ -7,6 +7,7 @@ data class Anak (
         @get:Exclude
         var id: String = "",
         var image: String = "",
+        var nomor: String = "",
         var name: String = "",
         var kelas : String = "",
         var status : String = " "
