@@ -45,61 +45,112 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/image_header"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="14dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp">
 
-            <Button
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btn_telepon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Telepon"
-                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:backgroundTint="@color/white"
-                app:icon="@drawable/ic_call"
-                app:iconSize="18dp"
-                app:iconPadding="4dp"
-                app:iconTint="@color/blue"
-                style="@style/Widget.MaterialComponents.Button.Icon" />
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp">
 
-            <Button
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_call" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Telepon"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btn_sms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kirim SMS"
-                android:textAllCaps="false"
-                android:layout_marginHorizontal="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:backgroundTint="@color/white"
-                app:icon="@drawable/ic_message"
-                app:iconSize="18dp"
-                app:iconPadding="4dp"
-                app:iconTint="@color/purple"
-                style="@style/Widget.MaterialComponents.Button.Icon" />
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp">
 
-            <Button
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_message" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Kirim SMS"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btn_whatsapp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="Whatsapp"
-                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="8dp"
+                android:layout_marginEnd="2dp"
                 android:layout_weight="1"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                android:backgroundTint="@color/white"
-                app:icon="@drawable/whatsapp"
-                app:iconSize="18dp"
-                app:iconPadding="4dp"
-                app:iconTint="@color/green_500"
-                style="@style/Widget.MaterialComponents.Button.Icon" />
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/whatsapp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Whatsapp"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
@@ -108,7 +159,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/layout_button_contact"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="14dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -117,6 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginStart="2dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginVertical="8dp"
                 android:clickable="true"
@@ -215,6 +267,7 @@
                 android:id="@+id/btn_location"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginEnd="2dp"
                 android:layout_marginVertical="8dp"
                 android:layout_weight="1"
                 android:clickable="true"
@@ -230,14 +283,14 @@
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_map"/>
+                        android:src="@drawable/ic_map" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Lokasi"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
 
@@ -248,7 +301,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/layout_button_about">
+            android:layout_below="@id/layout_button_about"
+            android:layout_marginTop="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -263,11 +317,11 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_content_title"
+                    android:elevation="2dp"
                     android:padding="10dp"
                     android:text="Latar Belakang"
                     android:textColor="@color/black"
-                    android:elevation="2dp"
-                    app:drawableRightCompat="@drawable/ic_arrow_down"/>
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
 
                 <RelativeLayout
                     android:id="@+id/tv_isi_latar"
@@ -276,22 +330,22 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/bg_content"
-                    android:visibility="gone"
-                    android:elevation="1dp">
+                    android:elevation="1dp"
+                    android:visibility="gone">
 
                     <View
-                        android:background="@android:color/darker_gray"
                         android:layout_width="match_parent"
-                        android:layout_height="1px"/>
+                        android:layout_height="1px"
+                        android:background="@android:color/darker_gray" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/latar_belakang"
-                        android:lineSpacingExtra="2dp"
-                        android:textColor="@color/black"
                         android:layout_marginHorizontal="12dp"
-                        android:layout_marginVertical="12dp"/>
+                        android:layout_marginVertical="12dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/latar_belakang"
+                        android:textColor="@color/black" />
 
                 </RelativeLayout>
 
@@ -302,11 +356,11 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_content_title"
+                    android:elevation="2dp"
                     android:padding="8dp"
                     android:text="Visi"
                     android:textColor="@color/black"
-                    android:elevation="2dp"
-                    app:drawableRightCompat="@drawable/ic_arrow_down"/>
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
 
                 <RelativeLayout
                     android:id="@+id/tv_isi_visi"
@@ -315,22 +369,22 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/bg_content"
-                    android:visibility="gone"
-                    android:elevation="1dp">
+                    android:elevation="1dp"
+                    android:visibility="gone">
 
                     <View
-                        android:background="@android:color/darker_gray"
                         android:layout_width="match_parent"
-                        android:layout_height="1px"/>
+                        android:layout_height="1px"
+                        android:background="@android:color/darker_gray" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/visi"
-                        android:lineSpacingExtra="2dp"
-                        android:textColor="@color/black"
                         android:layout_marginHorizontal="12dp"
-                        android:layout_marginVertical="12dp"/>
+                        android:layout_marginVertical="12dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/visi"
+                        android:textColor="@color/black" />
 
                 </RelativeLayout>
 
@@ -341,11 +395,11 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_content_title"
+                    android:elevation="2dp"
                     android:padding="8dp"
                     android:text="Misi"
                     android:textColor="@color/black"
-                    android:elevation="2dp"
-                    app:drawableRightCompat="@drawable/ic_arrow_down"/>
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
 
                 <RelativeLayout
                     android:id="@+id/tv_isi_misi"
@@ -354,22 +408,22 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/bg_content"
-                    android:visibility="gone"
-                    android:elevation="1dp">
+                    android:elevation="1dp"
+                    android:visibility="invisible">
 
                     <View
-                        android:background="@android:color/darker_gray"
                         android:layout_width="match_parent"
-                        android:layout_height="1px"/>
+                        android:layout_height="1px"
+                        android:background="@android:color/darker_gray" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/misi"
-                        android:textColor="@color/black"
-                        android:lineSpacingExtra="2dp"
                         android:layout_marginHorizontal="12dp"
-                        android:layout_marginVertical="12dp"/>
+                        android:layout_marginVertical="12dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/misi"
+                        android:textColor="@color/black" />
 
                 </RelativeLayout>
 
