@@ -26,7 +26,8 @@ class AboutFragment : Fragment() {
 
     private lateinit var binding: FragmentAboutBinding
     private var isFilterShow: Boolean = true
-    val number = "6281394824882"
+    val number = "6285222322669"
+    val numberr = "085222322669"
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -146,7 +147,7 @@ class AboutFragment : Fragment() {
 
     private fun openPhone(){
         val intent = Intent(Intent.ACTION_DIAL)
-        intent.data = Uri.parse("tel:$number")
+        intent.data = Uri.parse("tel:$numberr")
         startActivity(intent)
     }
 

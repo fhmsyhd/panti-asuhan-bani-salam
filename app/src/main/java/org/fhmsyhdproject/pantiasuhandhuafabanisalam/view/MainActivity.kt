@@ -3,10 +3,7 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.item_article.view.*
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.R
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.ActivityMainBinding
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.AboutFragment

@@ -30,7 +30,7 @@ class ActivityFragment : Fragment() {
 
         val listActivity: MutableList<Article> = arrayListOf()
 
-        database.child("article").addValueEventListener(object : ValueEventListener {
+        database.child("activity").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.childrenCount > 0) {
                     for (item: DataSnapshot in snapshot.children) {
