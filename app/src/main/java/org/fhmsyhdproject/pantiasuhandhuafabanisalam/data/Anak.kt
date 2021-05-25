@@ -7,8 +7,8 @@ data class Anak (
         @get:Exclude
         var id: String = "",
         var image: String = "",
+        var nomor: String = "",
         var name: String = "",
-        var tglahir : String = "",
-        var umur : String = " ",
-        var asal : String = " "
+        var kelas : String = "",
+        var status : String = " "
 ) : Serializable
