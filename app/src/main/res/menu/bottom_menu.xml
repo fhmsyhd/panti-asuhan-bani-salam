@@ -4,7 +4,7 @@
         android:id="@+id/page_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="Home"/>
+        android:title="Beranda"/>
     <item
         android:id="@+id/page_donation"
         android:enabled="true"
@@ -14,5 +14,5 @@
         android:id="@+id/page_about"
         android:enabled="true"
         android:icon="@drawable/ic_about"
-        android:title="About"/>
+        android:title="Tentang"/>
 </menu>
