@@ -3,9 +3,9 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.data
 import com.google.firebase.database.Exclude
 import java.io.Serializable
 
-class Galeri(
+data class Category (
     @get:Exclude
-    var id: String= "",
-    var image: String = "",
-    var keterangan: String = ""
-): Serializable
+    var id: String? = null,
+    var logoKategori: String? = null,
+    var namaKategori: String? = null,
+) : Serializable
