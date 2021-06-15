@@ -140,7 +140,7 @@ class AboutFragment : Fragment() {
     private fun openSms(){
         val smsIntent = Intent(Intent.ACTION_VIEW)
         smsIntent.type = "vnd.android-dir/mms-sms"
-        smsIntent.putExtra("address", number)
+        smsIntent.putExtra("address", numberr)
         smsIntent.putExtra("sms_body", "Assalamualaikum Wr. Wb. Panti Asuhan Bani salam. Saya dapat kontak panti dari aplikasi Bani Salam...")
         startActivity(smsIntent)
     }

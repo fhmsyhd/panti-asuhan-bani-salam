@@ -74,14 +74,15 @@ class HomeFragment : Fragment() {
                             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                     binding.rvArticle.adapter = adapterArticle
 
-                    shimmerFrameLayout.stopShimmer()
-                    shimmerFrameLayout.visibility = View.GONE
+                    binding.layoutTitleArticle.visibility = View.VISIBLE
+                    shimmerFrameLayout2.stopShimmer()
+                    shimmerFrameLayout2.visibility = View.GONE
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(requireContext(), "Could not read from database", Toast.LENGTH_LONG).show()
-                shimmerFrameLayout.visibility = View.GONE
+                shimmerFrameLayout2.visibility = View.GONE
             }
 
         })
@@ -113,15 +114,14 @@ class HomeFragment : Fragment() {
                         LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                     binding.rvActivity.adapter = adapterActivity
 
-                    binding.layoutTitleArticle.visibility = View.VISIBLE
-                    shimmerFrameLayout2.stopShimmer()
-                    shimmerFrameLayout2.visibility = View.GONE
+                    shimmerFrameLayout.stopShimmer()
+                    shimmerFrameLayout.visibility = View.GONE
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(requireContext(), "Could not read from database", Toast.LENGTH_LONG).show()
-                shimmerFrameLayout2.visibility = View.GONE
+                shimmerFrameLayout.visibility = View.GONE
             }
 
         })
@@ -146,13 +146,18 @@ class HomeFragment : Fragment() {
             }
         }
 
+        binding.tvKegiatanLainnya.setOnClickListener {
+            val intent = Intent(requireContext(), ActivityActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.tvArtikelLainnya.setOnClickListener {
             val intent = Intent(requireContext(), ArticleActivity::class.java)
             startActivity(intent)
         }
 
-        binding.tvKegiatanLainnya.setOnClickListener {
-            val intent = Intent(requireContext(), ActivityActivity::class.java)
+        binding.layoutTitleArticle.setOnClickListener {
+            val intent = Intent(requireContext(), ArticleActivity::class.java)
             startActivity(intent)
         }
 

@@ -7,10 +7,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.item_article.*
 import kotlinx.android.synthetic.main.item_article.view.*
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.R
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Article
-import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Needs
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.ActivityNeedsBinding
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.AdapterUtil
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.detail.DetailContentActivity
@@ -72,6 +73,7 @@ class NeedsActivity : AppCompatActivity() {
             }
 
         })
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

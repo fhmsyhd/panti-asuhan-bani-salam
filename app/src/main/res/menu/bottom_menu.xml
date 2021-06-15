@@ -9,7 +9,7 @@
         android:id="@+id/page_donation"
         android:enabled="true"
         android:icon="@drawable/ic_donation"
-        android:title="Donasi"/>
+        android:title="Donation"/>
     <item
         android:id="@+id/page_about"
         android:enabled="true"

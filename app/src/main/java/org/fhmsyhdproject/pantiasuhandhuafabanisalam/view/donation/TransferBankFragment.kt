@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.firebase.database.*
@@ -90,4 +91,8 @@ class TransferBankFragment : Fragment() {
         Toast.makeText(requireContext(), "Text copied : " + text, Toast.LENGTH_SHORT).show()
     }
 
+}
+
+fun copyTextTest(text:String): String{
+    return text
 }
