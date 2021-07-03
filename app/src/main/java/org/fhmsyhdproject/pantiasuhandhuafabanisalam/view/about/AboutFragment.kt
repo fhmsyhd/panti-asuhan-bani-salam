@@ -120,7 +120,7 @@ class AboutFragment : Fragment() {
         try {
             val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, "Assalamualaikum Wr. Wb. Panti Asuhan Bani salam. Saya dapat kontak panti dari aplikasi Bani Salam...")
+                putExtra(Intent.EXTRA_TEXT, "Assalamualaikum Wr. Wb. Panti Asuhan Bani salam. Saya dapat kontak panti dari aplikasi Panti Asuhan Bani Salam...")
                 putExtra("jid", "${number}@s.whatsapp.net")
                 type = "text/plain"
                 setPackage("com.whatsapp")
