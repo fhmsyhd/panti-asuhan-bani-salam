@@ -71,6 +71,7 @@ class ArticleActivity : AppCompatActivity() {
             }
 
         })
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -29,14 +29,18 @@ class MainActivity : AppCompatActivity() {
         when {
             moveToDonation -> {
                 binding.bottomNav.menu.getItem(2).isChecked = true
-                supportFragmentManager.beginTransaction().replace(
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(
                     R.id.home_frame,
                     DonationFragment()
                 ).commit()
             }
             moveToAbout -> {
                 binding.bottomNav.menu.getItem(3).isChecked = true
-                supportFragmentManager.beginTransaction().replace(
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(
                     R.id.home_frame,
                     AboutFragment()
                 ).commit()

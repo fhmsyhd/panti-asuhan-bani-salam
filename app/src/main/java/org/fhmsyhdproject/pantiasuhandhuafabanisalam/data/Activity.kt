@@ -3,10 +3,9 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.data
 import android.os.Parcelable
 import com.google.firebase.database.Exclude
 import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
 
 @Parcelize
-data class Article (
+data class Activity (
     var id: String? = "",
     var title: String? = "",
     var content: String? = "",

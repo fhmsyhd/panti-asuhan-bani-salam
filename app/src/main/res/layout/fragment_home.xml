@@ -70,7 +70,8 @@
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="16dp"
                     android:orientation="vertical"
-                    android:layout_below="@id/layout_title_activity">
+                    android:layout_below="@id/layout_title_activity"
+                    android:visibility="gone">
 
                     <!-- Adding 15 rows of placeholders -->
                     <LinearLayout
@@ -99,7 +100,8 @@
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="16dp"
                     android:orientation="vertical"
-                    android:layout_below="@id/shimmerFrameLayout">
+                    android:layout_below="@id/shimmerFrameLayout"
+                    android:visibility="gone">
 
                     <!-- Adding 15 rows of placeholders -->
                     <LinearLayout

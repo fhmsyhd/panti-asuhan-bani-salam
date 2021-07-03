@@ -102,18 +102,19 @@ dependencies {
     //maps
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
 
-    // Glide
-    implementation "com.github.bumptech.glide:glide:4.11.0"
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
-    //glide library for image
+    // Glide & Circle
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     // shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
     // PRdownload
     implementation 'com.mindorks.android:prdownloader:0.6.0'
+
+    // reusableadapter
+    implementation 'com.github.azmirizkifar20:reusable-recyclerview-adapter:1.0.3'
 
     //deeplink
 //    implementation 'com.airbnb:deeplinkdispatch:3.1.1'

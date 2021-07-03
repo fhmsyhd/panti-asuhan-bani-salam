@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam">
+        <activity android:name=".view.about.pantilain.DetailOrphangeActivity"></activity>
+        <activity android:name=".view.about.pantilain.MorePantiActivity" />
         <activity android:name=".view.donation.needs.NeedsActivity" />
         <activity android:name=".view.SplashActivity">
             <intent-filter>

@@ -1,13 +1,9 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.about.member.ChildrenActivity">
+    android:layout_height="match_parent"
+    tools:context=".view.about.member.ChildrenActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar"
@@ -33,7 +29,8 @@
             android:layout_marginHorizontal="24dp"
             android:text="@string/kategori"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -42,6 +39,7 @@
             android:layout_marginHorizontal="24dp"
             android:layout_below="@id/tvKategoriText"
             android:layout_marginTop="10dp"
+            android:visibility="gone"
             app:cardCornerRadius="20dp">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -53,6 +51,37 @@
 
         </androidx.cardview.widget.CardView>
 
+        <include
+            android:id="@+id/emptyView"
+            layout="@layout/item_view_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardView"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/imageEmpty"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/cardView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_empty_box" />
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageEmpty"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="24dp"
+            android:text="Data Kosong"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:visibility="gone"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAnak"
             android:layout_below="@id/cardView"
@@ -62,7 +91,4 @@
             android:layout_marginTop="16dp"
             tools:listitem="@layout/item_anak"/>
 
-
-    </RelativeLayout>
-
-</ScrollView>
+</RelativeLayout>

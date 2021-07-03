@@ -3,16 +3,17 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.data
 import android.os.Parcelable
 import com.google.firebase.database.Exclude
 import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
 
 @Parcelize
-data class Article (
+data class Orphanage (
     var id: String? = "",
-    var title: String? = "",
-    var content: String? = "",
-    var image: String? = "",
-    var date: String? = "",
-    var source: String? = "",
+    var nama: String? = "",
+    var nomor: String? = "",
+    var pemilik: String? = "",
+    var alamat: String? = "",
+    var gambar: String? = "",
+    var logo: String? = "",
+    var maps: String? = "",
     @get:Exclude
     var timestamp: Long? = System.currentTimeMillis()
 ) : Parcelable
