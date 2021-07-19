@@ -39,7 +39,6 @@ class AddActivityActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddActivityBinding
 
-    private val PICK_IMAGE_REQUEST = 71
     private var selectedImageBitmap: Bitmap? = null
     private var uriUpload: Uri? = null
     private var urlDownload: String? = null
@@ -88,7 +87,6 @@ class AddActivityActivity : AppCompatActivity() {
                     insertData()
                 }
             }
-//            test2()
         }
         binding.btnUploadImage.setOnClickListener {
             if (!checkPermissionExternalStorage(this)){
@@ -106,21 +104,6 @@ class AddActivityActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes)
         startActivityForResult(intent, GALLERY_REQUEST_CODE)
-    }
-
-    fun test(){
-        val gsReference = storage.getReferenceFromUrl("gs://peduli-rumah-yatim.appspot.com/img/activity/23837497-b11a-448b-89db-6b2c45c1b539")
-        val fr = FirebaseAuth.getInstance()
-        val user = fr.signInWithEmailAndPassword("fhmsyhd@gmail.com", "kasurrusak")
-        val uri = storageReference.child("img/activity/23837497-b11a-448b-89db-6b2c45c1b539").downloadUrl
-        showMessage(uri.toString())
-    }
-
-    fun test2() {
-        val gsReference = storage.getReferenceFromUrl("gs://peduli-rumah-yatim.appspot.com/img/activity/23837497-b11a-448b-89db-6b2c45c1b539")
-        Glide.with(this)
-            .load(gsReference)
-            .into(binding.imgActivity)
     }
 
     override fun onRequestPermissionsResult(
