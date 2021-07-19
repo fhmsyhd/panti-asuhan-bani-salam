@@ -7,12 +7,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_donation.*
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.R
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Needs
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.FragmentDonationBinding
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.ReusableAdapter
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.SectionPagerAdapter
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.AboutViewModel
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.pantilain.DetailOrphangeActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.donation.needs.NeedsActivity
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.donation.procedure.ProcedureActivity
 
 class DonationFragment : Fragment() {
 
@@ -42,7 +47,7 @@ class DonationFragment : Fragment() {
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.info_donate -> {
-                    val intent = Intent(requireContext(), NeedsActivity::class.java)
+                    val intent = Intent(requireContext(), ProcedureActivity::class.java)
                     startActivity(intent)
                     true
                 }

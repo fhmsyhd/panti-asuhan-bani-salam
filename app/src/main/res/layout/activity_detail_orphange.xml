@@ -186,7 +186,7 @@
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btn_pantilain"
+        android:id="@+id/btn_location"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/layout_button_contact"

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.donation.procedure.ProcedureActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:titleTextColor="@color/black"
+            app:popupTheme="@style/Theme.PantiAsuhanDhuafaBaniSalam.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBar"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/tv_tf_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/tv_title_tf_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Transfer Bank"
+                    android:textColor="@color/black"
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/tv_title_tf_bank"
+                    android:background="@color/colorGrey" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_tf_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/tf_bank"
+                android:textColor="@color/black"
+                android:background="#F5F5F5"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/tv_tf_ewallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/tv_title_tf_ewallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Transfer E-Wallet"
+                    android:textColor="@color/black"
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/tv_title_tf_ewallet"
+                    android:background="@color/colorGrey" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_tf_ewallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/tf_ewallet"
+                android:textColor="@color/black"
+                android:background="#F5F5F5"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/tv_tf_barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/tv_title_tf_barang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Donasi Barang"
+                    android:textColor="@color/black"
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/tv_title_tf_barang"
+                    android:background="@color/colorGrey" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_tf_barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/tf_barang"
+                android:textColor="@color/black"
+                android:background="#F5F5F5"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

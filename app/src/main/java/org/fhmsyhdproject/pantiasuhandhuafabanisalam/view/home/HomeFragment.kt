@@ -30,9 +30,6 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.detail.DetailCont
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var database: DatabaseReference
-    lateinit var adapterArticle: AdapterMaxUtil<Article>
-    lateinit var adapterActivity: AdapterMaxUtil<Article>
     private lateinit var homeViewModel: HomeViewModel
 
     // adapter

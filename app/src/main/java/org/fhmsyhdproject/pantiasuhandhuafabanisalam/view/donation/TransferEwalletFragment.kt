@@ -46,7 +46,32 @@ class TransferEwalletFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentTransferEwalletBinding.inflate(inflater, container, false)
 
+        binding.btnTest.setOnClickListener {
+            openWhatsapp()
+        }
+
         return binding.root
+    }
+
+    private fun openWhatsapp(){
+        try {
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+//                putExtra(Intent.EXTRA_TEXT, "Assalamualaikum Wr. Wb. Panti Asuhan Bani salam. Saya dapat kontak panti dari aplikasi Bani Salam...")
+//                putExtra("jid", "${number}@s.whatsapp.net")
+                type = "text/plain"
+                setPackage("ovo.id")
+            }
+            startActivity(sendIntent)
+        }catch (e: Exception){
+            e.printStackTrace()
+            val appPackageName = "ovo.id"
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$appPackageName")))
+            } catch (e: android.content.ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
+            }
+        }
     }
 
 

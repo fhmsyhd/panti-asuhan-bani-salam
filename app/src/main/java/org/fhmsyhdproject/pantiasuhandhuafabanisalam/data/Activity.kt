@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Activity (
+    @get:Exclude
     var id: String? = "",
     var title: String? = "",
     var content: String? = "",

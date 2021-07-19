@@ -3,7 +3,6 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.data
 import android.os.Parcelable
 import com.google.firebase.database.Exclude
 import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
 
 @Parcelize
 data class Article (

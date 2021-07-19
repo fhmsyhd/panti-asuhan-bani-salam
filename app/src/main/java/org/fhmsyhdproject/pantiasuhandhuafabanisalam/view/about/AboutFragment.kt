@@ -20,6 +20,7 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.FragmentAboutBi
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.gallery.GalleryActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.member.AdministratorActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.member.ChildrenActivity
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.pantilain.MorePantiActivity
 
 
 class AboutFragment : Fragment() {
@@ -32,12 +33,13 @@ class AboutFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAboutBinding.inflate(inflater, container, false)
 
         openAbout()
         btnContact()
         btnMenu()
+        btnMorePanti()
 
         return binding.root
     }
@@ -71,6 +73,12 @@ class AboutFragment : Fragment() {
 
         binding.btnLocation.setOnClickListener {
             changeActivity(openMaps()::class.java)
+        }
+    }
+
+    private fun btnMorePanti(){
+        binding.btnPantilain.setOnClickListener {
+            changeActivity(MorePantiActivity::class.java)
         }
     }
 

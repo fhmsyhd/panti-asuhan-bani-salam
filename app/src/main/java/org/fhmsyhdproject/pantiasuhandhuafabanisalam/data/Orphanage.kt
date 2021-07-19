@@ -9,6 +9,7 @@ data class Orphanage (
     var id: String? = "",
     var nama: String? = "",
     var nomor: String? = "",
+    var nomorwa: String? = "",
     var pemilik: String? = "",
     var alamat: String? = "",
     var gambar: String? = "",

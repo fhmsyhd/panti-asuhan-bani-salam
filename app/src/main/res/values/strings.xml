@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Panti Asuhan Dhuafa Bani Salam</string>
+    <string name="app_name">Panti Asuhan Bani Salam</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="trasnfer_bank">Transfer Bank</string>
@@ -14,6 +14,16 @@
     <string name="gambar">Gambar</string>
     <string name="kategori">Kategori</string>
     <string name="tv_keterangan">Keterangan</string>
-
+    <string name="tf_bank">1. Masuk ke menu bank anda, Internet/Mobile/ATM Banking. \n\n2. Pilih menu <b>TRANSFER</b>.
+    \n\n3. Masukkan <b>nomor rekening</b> panti sesuai dengan bank yang dipilih. \n\n4. Masukkan jumlah dana yang diinginkan.
+    \n\n5. Selesaikan transaksi. \n\n6. <b>Konfirmasi</b> donasi anda kepada pihak panti. Kontak tersedia di halaman Tentang Panti.
+    \n\nMulai dari Rp. 10.000 anda sudah bisa berdonasi kepada panti. Jazakallah Khairan Katsiran.</string>
+    <string name="tf_ewallet">1. Pastikan anda sudah mendownload aplikasi e-wallet yang tersedia. \n\n2. Buka aplikasi e-wallet yang ada inginkan.
+    \n\n3. Pilih menu <b>BAYAR</b>. \n\n4. Scan code qr atau masukkan gambar qode qr yang sudah terdownload.
+    \n\n5. Masukkan jumlah dana yang diinginkan. \n\n6. Pilih metode pembayaran. \n\n7. Konfirmasi pembayaran. \n\n8. <b>Konfirmasi</b> donasi anda kepada pihak panti. Kontak tersedia di halaman Tentang Panti.
+    \n\nMulai dari Rp. 1000 anda sudah bisa berdonasi kepada panti. Jazakallah Khairan Katsiran.</string>
+    <string name="tf_barang">1. <b>Konfirmasi</b> donasi anda kepada pihak panti bahwa ingin mengirim barang. Kontak tersedia di halaman Tentang Panti. \n\n2. Donasi bisa berupa Pakaian/Perlengkapan Sekolah/Kebutuhan Sehari-hari/Buku/DLL.
+    \n\n3. Kirimkan donasi ke alamat panti. \n\n4. Tetap kontak panti perihal donasi yang anda kirimkan.
+    \n\nJazakallah Khairan Katsiran. \n\nNotes : \n\nAlamat : Jl Terusan Buah Batu No 283 Dekat Tol Buah Batu Cipagalo, Kujangsari, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40287</string>
 
 </resources>
