@@ -3,7 +3,10 @@ package org.fhmsyhdproject.banisalamadmin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.fhmsyhdproject.banisalamadmin.addimage.AddImageActivity
 import org.fhmsyhdproject.banisalamadmin.databinding.ActivityHomeBinding
+import org.fhmsyhdproject.banisalamadmin.kebutuhanpanti.AddKebutuhanActivity
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -26,6 +29,14 @@ class HomeActivity : AppCompatActivity() {
     private fun initUI(){
         binding.btnAddActivity.setOnClickListener {
             val intent = Intent(this, AddActivityActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnAddNeeds.setOnClickListener{
+            val intent = Intent(this, AddKebutuhanActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnAddImage.setOnClickListener{
+            val intent = Intent(this, AddImageActivity::class.java)
             startActivity(intent)
         }
     }
