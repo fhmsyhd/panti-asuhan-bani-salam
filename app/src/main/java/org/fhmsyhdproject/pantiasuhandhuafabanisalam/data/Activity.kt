@@ -1,14 +1,18 @@
 package org.fhmsyhdproject.pantiasuhandhuafabanisalam.data
 
+import android.os.Parcelable
 import com.google.firebase.database.Exclude
-import java.io.Serializable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Activity (
     @get:Exclude
-    var id: String = "",
-    var title: String = "",
-    var content: String = "",
-    var image: String = "",
-    var date: String = "",
-    var source: String = ""
-) : Serializable
+    var id: String? = "",
+    var title: String? = "",
+    var content: String? = "",
+    var image: String? = "",
+    var date: String? = "",
+    var source: String? = "",
+    @get:Exclude
+    var timestamp: Long? = System.currentTimeMillis()
+) : Parcelable

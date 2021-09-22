@@ -18,11 +18,11 @@
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="Ingin donasi pakai apa?" />
-
+                app:title="Ingin donasi pakai apa?"
+                app:menu="@menu/donation_menu"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
         </com.google.android.material.appbar.AppBarLayout>
 
         <com.google.android.material.tabs.TabLayout

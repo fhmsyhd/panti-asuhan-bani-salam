@@ -20,6 +20,7 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.FragmentAboutBi
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.gallery.GalleryActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.member.AdministratorActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.member.ChildrenActivity
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.pantilain.MorePantiActivity
 
 
 class AboutFragment : Fragment() {
@@ -32,12 +33,13 @@ class AboutFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAboutBinding.inflate(inflater, container, false)
 
         openAbout()
         btnContact()
         btnMenu()
+        btnMorePanti()
 
         return binding.root
     }
@@ -71,6 +73,12 @@ class AboutFragment : Fragment() {
 
         binding.btnLocation.setOnClickListener {
             changeActivity(openMaps()::class.java)
+        }
+    }
+
+    private fun btnMorePanti(){
+        binding.btnPantilain.setOnClickListener {
+            changeActivity(MorePantiActivity::class.java)
         }
     }
 
@@ -140,7 +148,7 @@ class AboutFragment : Fragment() {
     private fun openSms(){
         val smsIntent = Intent(Intent.ACTION_VIEW)
         smsIntent.type = "vnd.android-dir/mms-sms"
-        smsIntent.putExtra("address", number)
+        smsIntent.putExtra("address", numberr)
         smsIntent.putExtra("sms_body", "Assalamualaikum Wr. Wb. Panti Asuhan Bani salam. Saya dapat kontak panti dari aplikasi Bani Salam...")
         startActivity(smsIntent)
     }

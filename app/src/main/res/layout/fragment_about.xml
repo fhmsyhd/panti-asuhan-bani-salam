@@ -159,6 +159,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/layout_button_contact"
+            android:layout_marginBottom="8dp"
             android:paddingHorizontal="14dp"
             android:gravity="center"
             android:orientation="horizontal">
@@ -298,10 +299,43 @@
             
         </LinearLayout>
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_pantilain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_button_about"
+            android:layout_marginHorizontal="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_house" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Panti Lainnya"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/layout_button_about"
+            android:layout_below="@id/btn_pantilain"
             android:layout_marginTop="1dp">
 
             <LinearLayout

@@ -3,22 +3,38 @@ package org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.item_article.view.*
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.R
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Activity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Article
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.ActivityActivityBinding
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.AdapterCallback
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.AdapterUtil
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.ReusableAdapter
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.HomeViewModel
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.detail.DetailContentActivity
 
 class ActivityActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityActivityBinding
-    private lateinit var database: DatabaseReference
-    lateinit var adapterArticle: AdapterUtil<Article>
+    private lateinit var homeViewModel: HomeViewModel
+
+    // adapter
+    private lateinit var activityAdapter: ReusableAdapter<Activity>
+
+    // utils
+    private var rowIndex = -1
+    private lateinit var user: FirebaseAuth
+    private lateinit var activitys: MutableList<Activity>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,44 +49,76 @@ class ActivityActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        database = FirebaseDatabase.getInstance().reference
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val listActivity: MutableList<Article> = arrayListOf()
+        // utils init
+        activitys = mutableListOf()
+        user = FirebaseAuth.getInstance()
 
-        database.child("activity").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.childrenCount > 0) {
-                    for (item: DataSnapshot in snapshot.children) {
-                        item.getValue(Article::class.java)?.apply {
-                            listActivity.add(this)
-                        }
-                    }
-                    adapterArticle = AdapterUtil(
-                        R.layout.item_article,
-                        listActivity,
-                        { position, itemView, item ->
-                            itemView.tv_judul_artikel.text = item.title
-                            itemView.tv_isi_artikel.text = item.content
-                            Glide.with(this@ActivityActivity).load(item.image)
-                                .into(itemView.img_poster)
-                        },
-                        { position, item ->
-                            val intent = Intent(this@ActivityActivity, DetailContentActivity::class.java)
-                            intent.putExtra("detail", item)
-                            startActivity(intent)
-                        }
-                    )
-                    binding.rvActivity.layoutManager =
-                        LinearLayoutManager(this@ActivityActivity, LinearLayoutManager.VERTICAL, false)
-                    binding.rvActivity.adapter = adapterArticle
-                }
+        activityAdapter = ReusableAdapter(this)
+
+        setupActivityAdapter(binding.rvActivity)
+
+        initUI()
+
+    }
+
+    private fun initUI(){
+        // init activity
+        homeViewModel.fetchActivity()
+        homeViewModel.activitys.observe(this, Observer {
+            activitys = it.toMutableList()
+
+            activityAdapter.addData(it)
+
+            // null data check
+            if (it.isEmpty()){
+            } else {
             }
+        })
 
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@ActivityActivity, "Could not read from database", Toast.LENGTH_LONG).show()
-            }
+        homeViewModel.activityRealtimeUpdate()
+        homeViewModel.activity.observe(this, Observer {
+
+            // update activity
+//            if (!activitys.contains(it)) {
+//                activitys.add(it)
+//            } else {
+//                val index = activitys.indexOf(it)
+//                activitys[index] = it
+//            }
+
+            // realtime
+            //activityAdapter.addData(activitys)
 
         })
+
+    }
+
+    private fun setupActivityAdapter(recyclerView: RecyclerView){
+        activityAdapter.adapterCallback(activityAdapterCallback)
+            .setLayout(R.layout.item_article)
+            .isVerticalView()
+            .build(recyclerView)
+    }
+
+    private val activityAdapterCallback = object: AdapterCallback<Activity> {
+        override fun initComponent(itemView: View, data: Activity, itemIndex: Int) {
+            // set utils
+            itemView.tv_judul_artikel.text = data.title
+            itemView.tv_isi_artikel.text = data.content
+
+            // set gambar activity
+            Glide.with(this@ActivityActivity)
+                .load(data.image)
+                .into(itemView.img_poster)
+        }
+
+        override fun onItemClicked(itemView: View, data: Activity, itemIndex: Int) {
+            val intent = Intent(this@ActivityActivity, DetailContentActivity::class.java)
+            intent.putExtra("detailActivity", data)
+            startActivity(intent)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -1,2 +1,3 @@
+include ':banisalamadmin'
 include ':app'
 rootProject.name = "Panti Asuhan Dhuafa Bani Salam"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/cat_all"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="All"/>
+    <item
+        android:id="@+id/cat_sd"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="SD"/>
+    <item
+        android:id="@+id/cat_smp"
+        android:enabled="true"
+        android:icon="@drawable/ic_donation"
+        android:title="SMP"/>
+    <item
+        android:id="@+id/cat_sma"
+        android:enabled="true"
+        android:icon="@drawable/ic_about"
+        android:title="SMA"/>
+    <item
+        android:id="@+id/cat_yatim"
+        android:enabled="true"
+        android:icon="@drawable/ic_about"
+        android:title="Yatim"/>
+    <item
+        android:id="@+id/cat_yatimpiatu"
+        android:enabled="true"
+        android:icon="@drawable/ic_about"
+        android:title="Yatim Piatu"/>
+</menu>

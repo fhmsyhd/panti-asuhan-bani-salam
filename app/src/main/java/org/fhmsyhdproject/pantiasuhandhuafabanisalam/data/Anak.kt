@@ -10,5 +10,6 @@ data class Anak (
         var nomor: String = "",
         var name: String = "",
         var kelas : String = "",
-        var status : String = " "
+        var status : String = " ",
+        var kategori : String = ""
 ) : Serializable
