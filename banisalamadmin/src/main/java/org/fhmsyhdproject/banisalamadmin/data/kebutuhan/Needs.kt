@@ -5,7 +5,7 @@ import com.google.firebase.database.Exclude
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Kebutuhan (
+data class Needs (
     @get:Exclude
     var id: String? = "",
     var title: String? = "",

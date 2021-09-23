@@ -1,5 +1,5 @@
-package org.fhmsyhdproject.banisalamadmin.kebutuhanpanti
-
+package org.fhmsyhdproject.banisalamadmin
+import android.Manifest
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
@@ -22,19 +22,14 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import org.fhmsyhdproject.banisalamadmin.AddActivityActivity
-import org.fhmsyhdproject.banisalamadmin.HomeActivity
-import org.fhmsyhdproject.banisalamadmin.R
-import org.fhmsyhdproject.banisalamadmin.data.Activity
-import org.fhmsyhdproject.banisalamadmin.data.ActivityDb.Companion.getInstance
-import org.fhmsyhdproject.banisalamadmin.data.kebutuhan.Kebutuhan
+import org.fhmsyhdproject.banisalamadmin.data.kebutuhan.Needs
+import org.fhmsyhdproject.banisalamadmin.data.kebutuhan.NeedsDb
 import org.fhmsyhdproject.banisalamadmin.databinding.ActivityAddKebutuhanBinding
 import org.fhmsyhdproject.banisalamadmin.utils.Constant
-import org.fhmsyhdproject.banisalamadmin.utils.Constant.DB_ACTIVITY
+import org.fhmsyhdproject.banisalamadmin.utils.Constant.DB_NEEDS
 import org.fhmsyhdproject.banisalamadmin.utils.LoadUtilBitmap
 import java.io.FileNotFoundException
 import java.util.*
-import java.util.jar.Manifest
 
 class AddKebutuhanActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddKebutuhanBinding
@@ -48,7 +43,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
     private lateinit var storageReference: StorageReference
 
     private val viewModel: KebutuhanViewModel by lazy {
-        val factory = KebutuhanViewModelFactory(getInstance())
+        val factory = KebutuhanViewModelFactory(NeedsDb.getInstance())
         ViewModelProvider(this, factory).get(KebutuhanViewModel::class.java)
     }
 
@@ -102,7 +97,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
         val mimeTypes = arrayOf("image/jpeg", "image/png")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes)
-        startActivityForResult(intent, AddKebutuhanActivity.GALLERY_REQUEST_CODE)
+        startActivityForResult(intent, GALLERY_REQUEST_CODE)
     }
 
     override fun onRequestPermissionsResult(
@@ -262,7 +257,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
     }
 
     private fun insertData() {
-        val key = database.child(DB_ACTIVITY).push().key!!
+        val key = database.child(DB_NEEDS).push().key!!
         val title = binding.etTitleNeeds.text
         val content = binding.etContentNeeds.text
         var image =
@@ -270,7 +265,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
         val date = "February"
         val source = "Panti Asuhan Bani Salam"
 
-        val data = Kebutuhan(
+        val data = Needs(
             key,
             title.toString(),
             content.toString(),
@@ -280,20 +275,20 @@ class AddKebutuhanActivity : AppCompatActivity() {
         )
 
         viewModel.insertData(data)
-        showMessage("Tambah kegiatan berhasil!")
+        showMessage("Tambah Kebutuhan Panti Berhasil!")
         startActivity(Intent(this, HomeActivity::class.java))
         finish()
     }
 
     private fun insertDataWithImg(uri: String) {
-        val key = database.child(Constant.DB_ACTIVITY).push().key!!
+        val key = database.child(Constant.DB_NEEDS).push().key!!
         val title = binding.etTitleNeeds.text
         val content = binding.etContentNeeds.text
         var image = uri
         val date = "February"
         val source = "Panti Asuhan Bani Salam"
 
-        val data = Kebutuhan(
+        val data = Needs(
             key,
             title.toString(),
             content.toString(),

@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam" >
-        <activity android:name=".kebutuhanpanti.AddKebutuhanActivity" >
+        <activity android:name=".AddKebutuhanActivity" >
         </activity>
         <activity android:name=".addimage.AddImageActivity" />
         <activity android:name=".kebutuhanpanti.KebutuhanActivity" />
