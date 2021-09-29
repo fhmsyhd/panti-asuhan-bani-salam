@@ -34,6 +34,10 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, AddKebutuhanActivity::class.java)
             startActivity(intent)
         }
+        binding.btnAddArtikel.setOnClickListener{
+            val intent = Intent(this, AddArtikelActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnAddImage.setOnClickListener{
             val intent = Intent(this, AddImageActivity::class.java)
             startActivity(intent)

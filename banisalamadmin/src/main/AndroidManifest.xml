@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.fhmsyhdproject.banisalamadmin" >
+    package="org.fhmsyhdproject.banisalamadmin">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -11,13 +11,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam" >
-        <activity android:name=".AddKebutuhanActivity" >
-        </activity>
+        android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam">
+        <activity android:name=".AddArtikelActivity"></activity>
+        <activity android:name=".AddKebutuhanActivity"></activity>
         <activity android:name=".addimage.AddImageActivity" />
         <activity android:name=".kebutuhanpanti.KebutuhanActivity" />
         <activity android:name=".AddActivityActivity" />
-        <activity android:name=".HomeActivity" >
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

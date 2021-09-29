@@ -1,4 +1,5 @@
 package org.fhmsyhdproject.banisalamadmin
+
 import android.Manifest
 import android.app.ProgressDialog
 import android.content.Context
@@ -22,17 +23,18 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import org.fhmsyhdproject.banisalamadmin.data.kebutuhan.Needs
-import org.fhmsyhdproject.banisalamadmin.data.kebutuhan.NeedsDb
-import org.fhmsyhdproject.banisalamadmin.databinding.ActivityAddKebutuhanBinding
+import org.fhmsyhdproject.banisalamadmin.data.artikel.Article
+import org.fhmsyhdproject.banisalamadmin.data.artikel.ArticleDb
+import org.fhmsyhdproject.banisalamadmin.databinding.ActivityAddArtikelBinding
 import org.fhmsyhdproject.banisalamadmin.utils.Constant
-import org.fhmsyhdproject.banisalamadmin.utils.Constant.DB_NEEDS
 import org.fhmsyhdproject.banisalamadmin.utils.LoadUtilBitmap
+import org.fhmsyhdproject.banisalamadmin.viewArtikel.ArtikelViewModel
+import org.fhmsyhdproject.banisalamadmin.viewArtikel.ArtikelViewModelFactory
 import java.io.FileNotFoundException
 import java.util.*
 
-class AddKebutuhanActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAddKebutuhanBinding
+class AddArtikelActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAddArtikelBinding
 
     private var selectedImageBitmap: Bitmap? = null
     private var uriUpload: Uri? = null
@@ -42,14 +44,14 @@ class AddKebutuhanActivity : AppCompatActivity() {
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
 
-    private val viewModel: KebutuhanViewModel by lazy {
-        val factory = KebutuhanViewModelFactory(NeedsDb.getInstance())
-        ViewModelProvider(this, factory).get(KebutuhanViewModel::class.java)
+    private val viewModel: ArtikelViewModel by lazy {
+        val factory = ArtikelViewModelFactory(ArticleDb.getInstance())
+        ViewModelProvider(this, factory).get(ArtikelViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddKebutuhanBinding.inflate(layoutInflater)
+        binding = ActivityAddArtikelBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //init
@@ -60,7 +62,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.apply {
             elevation = 0f
-            title = "Tambah Kebutuhan"
+            title = "Tambah Artikel"
             setDisplayHomeAsUpEnabled(true)
         }
         initUI()
@@ -68,8 +70,8 @@ class AddKebutuhanActivity : AppCompatActivity() {
 
     private fun initUI() {
         binding.btnSumbit.setOnClickListener {
-            val title = binding.etTitleNeeds.text
-            val content = binding.etContentNeeds.text
+            val title = binding.etTitleArticle.text
+            val content = binding.etContentArticle.text
             if (title.isEmpty()) {
                 showMessage("Judul kegiatan haru diisi!")
             } else if (content.isEmpty()) {
@@ -169,7 +171,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
     }
 
     private fun setupImage(uri: Uri) {
-        Glide.with(this).load(uri).into(binding.imgNeeds)
+        Glide.with(this).load(uri).into(binding.imgArticle)
         uriUpload = uri
         imgChange = true
     }
@@ -257,15 +259,15 @@ class AddKebutuhanActivity : AppCompatActivity() {
     }
 
     private fun insertData() {
-        val key = database.child(DB_NEEDS).push().key!!
-        val title = binding.etTitleNeeds.text
-        val content = binding.etContentNeeds.text
+        val key = database.child(Constant.DB_ARTICLE).push().key!!
+        val title = binding.etTitleArticle.text
+        val content = binding.etContentArticle.text
         var image =
             "https://firebasestorage.googleapis.com/v0/b/peduli-rumah-yatim.appspot.com/o/img%2Factivity%2Fpengajian2.jpg?alt=media&token=f60a0a75-7cc3-42d9-8cb8-7f07dd9565b9"
         val date = "February"
         val source = "Panti Asuhan Bani Salam"
 
-        val data = Needs(
+        val data = Article(
             key,
             title.toString(),
             content.toString(),
@@ -275,20 +277,20 @@ class AddKebutuhanActivity : AppCompatActivity() {
         )
 
         viewModel.insertData(data)
-        showMessage("Tambah Kebutuhan Panti Berhasil!")
+        showMessage("Tambah Artikel Berhasil!")
         startActivity(Intent(this, HomeActivity::class.java))
         finish()
     }
 
     private fun insertDataWithImg(uri: String) {
-        val key = database.child(Constant.DB_NEEDS).push().key!!
-        val title = binding.etTitleNeeds.text
-        val content = binding.etContentNeeds.text
+        val key = database.child(Constant.DB_ARTICLE).push().key!!
+        val title = binding.etTitleArticle.text
+        val content = binding.etContentArticle.text
         var image = uri
         val date = "February"
         val source = "Panti Asuhan Bani Salam"
 
-        val data = Needs(
+        val data = Article(
             key,
             title.toString(),
             content.toString(),
@@ -298,7 +300,7 @@ class AddKebutuhanActivity : AppCompatActivity() {
         )
 
         viewModel.insertData(data)
-        showMessage("Tambah Kebutuhan Panti Berhasil!")
+        showMessage("Tambah Artikel berhasil!")
         startActivity(Intent(this, HomeActivity::class.java))
         finish()
     }
@@ -319,5 +321,4 @@ class AddKebutuhanActivity : AppCompatActivity() {
         finish()
         return true
     }
-
 }
