@@ -75,7 +75,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/round_edit_text"
                     android:fontFamily="sans-serif"
-                    android:hint="Judul Kegiatan"
+                    android:hint="Judul Kebutuhan"
                     android:padding="10dp" />
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:background="@drawable/round_edit_text"
                     android:fontFamily="sans-serif"
                     android:gravity="top"
-                    android:hint="Isi Kegiatan"
+                    android:hint="Isi Kebutuhan"
                     android:padding="10dp" />
 
                 <Button
