@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PantiAsuhanDhuafaBaniSalam">
-        <activity android:name=".AddActivityActivity"></activity>
+        <activity android:name=".AddArtikelActivity"></activity>
+        <activity android:name=".AddKebutuhanActivity"></activity>
+        <activity android:name=".addimage.AddImageActivity" />
+        <activity android:name=".kebutuhanpanti.KebutuhanActivity" />
+        <activity android:name=".AddActivityActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
