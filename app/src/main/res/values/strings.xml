@@ -22,8 +22,20 @@
     \n\n3. Pilih menu <b>BAYAR</b>. \n\n4. Scan code qr atau masukkan gambar qode qr yang sudah terdownload.
     \n\n5. Masukkan jumlah dana yang diinginkan. \n\n6. Pilih metode pembayaran. \n\n7. Konfirmasi pembayaran. \n\n8. <b>Konfirmasi</b> donasi anda kepada pihak panti. Kontak tersedia di halaman Tentang Panti.
     \n\nMulai dari Rp. 1000 anda sudah bisa berdonasi kepada panti. Jazakallah Khairan Katsiran.</string>
+    <string name="tf_app">1. Masuk ke halaman donasi . \n\n2. pilih menu "Scan Kode QR".
+    \n\n3. Klik tombol <b>Donasi Sekarang</b>. \n\n4. Masukkan jumlah donasi yang diinginkan
+    \n\n5. Isi informasi diri untuk pendataan panti dan konfirmasi. \n\n6. Pilih metode pembayaran. \n\n7. Konfirmasi pembayaran. \n\n8. <b>Konfirmasi</b> donasi anda kepada pihak panti. Kontak tersedia di halaman Tentang Panti.
+    \n\nMulai dari Rp. 10.000 anda sudah bisa berdonasi kepada panti. Jazakallah Khairan Katsiran.</string>
     <string name="tf_barang">1. <b>Konfirmasi</b> donasi anda kepada pihak panti bahwa ingin mengirim barang. Kontak tersedia di halaman Tentang Panti. \n\n2. Donasi bisa berupa Pakaian/Perlengkapan Sekolah/Kebutuhan Sehari-hari/Buku/DLL.
     \n\n3. Kirimkan donasi ke alamat panti. \n\n4. Tetap kontak panti perihal donasi yang anda kirimkan.
     \n\nJazakallah Khairan Katsiran. \n\nNotes : \n\nAlamat : Jl Terusan Buah Batu No 283 Dekat Tol Buah Batu Cipagalo, Kujangsari, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40287</string>
+
+    <string name="notif_title">Kegiatan Baru</string>
+    <string name="notif_message">Ada kegiatan baru lho, yuk buka aplikasi!
+</string>
+    <string name="notif_channel_id" translatable="false">reminder</string>
+    <string name="notif_channel_name">Reminder</string>
+    <string name="notif_channel_desc">Reminder update data
+</string>
 
 </resources>

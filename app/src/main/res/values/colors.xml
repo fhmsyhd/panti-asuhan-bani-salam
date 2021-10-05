@@ -15,5 +15,6 @@
   <color name="colorWhite">#FFFFFFFF</color>
   <color name="navyBlue">#000080</color>
   <color name="greyBlue">#577098</color>
+  <color name="darkBlue">#1A1D24</color>
 
 </resources>

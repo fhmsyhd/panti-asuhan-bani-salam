@@ -1,5 +1,6 @@
 package org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,8 +10,11 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.data.Article
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.Constant.DB_ACTIVITY
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.Constant.DB_ARTICLE
 
+
 @Suppress("SpellCheckingInspection")
 class HomeViewModel: ViewModel() {
+
+    private val TAG = "MyActivity"
 
     // database
     private val dbActivity = FirebaseDatabase.getInstance().getReference(DB_ACTIVITY)
@@ -57,6 +61,7 @@ class HomeViewModel: ViewModel() {
                     activity.let { activitys.add(it) }
                 }
                 _activitys.value = activitys
+                Log.d(TAG, "Value is: ")
             }
         }
 
@@ -95,6 +100,11 @@ class HomeViewModel: ViewModel() {
             )
             activity.id = activitySnapshot.key
             _activity.value = activity
+//            Toast.makeText(
+//                conte,
+//                "Data di update",
+//                Toast.LENGTH_LONG
+//            ).show()
         }
 
         override fun onChildRemoved(activitySnapshot: DataSnapshot) {

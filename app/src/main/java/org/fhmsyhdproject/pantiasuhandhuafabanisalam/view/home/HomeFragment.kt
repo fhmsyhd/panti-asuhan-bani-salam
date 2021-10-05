@@ -1,12 +1,16 @@
 package org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +27,7 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.FragmentHomeBin
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.AdapterCallback
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.AdapterMaxUtil
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.ReusableAdapter
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.notify.sendNotification
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.activity.ActivityActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.article.ArticleActivity
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.detail.DetailContentActivity
@@ -106,15 +111,16 @@ class HomeFragment : Fragment() {
         homeViewModel.activity.observe(viewLifecycleOwner, Observer {
 
             // update activity
-//            if (!activitys.contains(it)) {
-//                activitys.add(it)
-//            } else {
-//                val index = activitys.indexOf(it)
-//                activitys[index] = it
-//            }
+            if (!activitys.contains(it)) {
+                activitys.add(it)
+            } else {
+                val index = activitys.indexOf(it)
+                activitys[index] = it
+                tampilNotifikasi()
+            }
 
             // realtime
-            //activityAdapter.addData(activitys)
+//            activityAdapter.addData(activitys)
 
         })
 
@@ -223,6 +229,7 @@ class HomeFragment : Fragment() {
 
     private fun buttonMore(){
         binding.tvKegiatanLainnya.setOnClickListener {
+//            tampilNotifikasi()
             val intent = Intent(requireContext(), ActivityActivity::class.java)
             startActivity(intent)
         }
@@ -236,5 +243,11 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), ArticleActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun tampilNotifikasi() {
+        val notificationManager = ContextCompat.getSystemService(
+            requireContext(), NotificationManager::class.java)
+        notificationManager?.sendNotification(requireContext())
     }
 }

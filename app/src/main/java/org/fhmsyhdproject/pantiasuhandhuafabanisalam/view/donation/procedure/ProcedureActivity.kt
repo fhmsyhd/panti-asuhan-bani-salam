@@ -37,6 +37,7 @@ class ProcedureActivity : AppCompatActivity() {
     private fun openProcedure(){
         clickContent(binding.tvTfBank, binding.tvTitleTfBank, binding.tvContentTfBank)
         clickContent(binding.tvTfEwallet, binding.tvTitleTfEwallet, binding.tvContentTfEwallet)
+        clickContent(binding.tvTfApp, binding.tvTitleTfApp, binding.tvContentTfApp)
         clickContent(binding.tvTfBarang, binding.tvTitleTfBarang, binding.tvContentTfBarang)
     }
 

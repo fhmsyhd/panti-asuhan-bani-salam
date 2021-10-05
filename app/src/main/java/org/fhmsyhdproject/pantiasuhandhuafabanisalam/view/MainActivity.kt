@@ -9,6 +9,7 @@ import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.ActivityMainBin
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.about.AboutFragment
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.donation.DonationFragment
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.home.HomeFragment
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.pray.PrayFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,12 +24,22 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNav.setOnNavigationItemSelectedListener (mOnNavigationItemSelectedListener)
 
+//        val moveToPrayer = intent.getBooleanExtra("moveToFragmentPrayer", false)
         val moveToDonation = intent.getBooleanExtra("moveToFragmentDonation", false)
         val moveToAbout = intent.getBooleanExtra("moveToFragmentAbout", false)
 
         when {
+//            moveToPrayer -> {
+//                binding.bottomNav.menu.getItem(2).isChecked = true
+//                supportFragmentManager
+//                    .beginTransaction()
+//                    .replace(
+//                    R.id.home_frame,
+//                    PrayFragment()
+//                ).commit()
+//            }
             moveToDonation -> {
-                binding.bottomNav.menu.getItem(2).isChecked = true
+                binding.bottomNav.menu.getItem(3).isChecked = true
                 supportFragmentManager
                     .beginTransaction()
                     .replace(
@@ -37,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 ).commit()
             }
             moveToAbout -> {
-                binding.bottomNav.menu.getItem(3).isChecked = true
+                binding.bottomNav.menu.getItem(4).isChecked = true
                 supportFragmentManager
                     .beginTransaction()
                     .replace(
@@ -61,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         when(it.itemId) {
             R.id.page_home -> fragmentCheck(R.id.page_home, HomeFragment())
+//            R.id.page_prayer -> fragmentCheck(R.id.page_prayer, PrayFragment())
             R.id.page_donation -> fragmentCheck(R.id.page_donation, DonationFragment())
             R.id.page_about -> fragmentCheck(R.id.page_about, AboutFragment())
         }

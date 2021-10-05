@@ -107,6 +107,42 @@
                 android:visibility="gone"/>
 
             <RelativeLayout
+                android:id="@+id/tv_tf_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/tv_title_tf_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Transfer dari Aplikasi"
+                    android:textColor="@color/black"
+                    app:drawableRightCompat="@drawable/ic_arrow_down" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/tv_title_tf_app"
+                    android:background="@color/colorGrey" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_tf_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/tf_app"
+                android:textColor="@color/black"
+                android:background="#F5F5F5"
+                android:visibility="gone"/>
+
+            <RelativeLayout
                 android:id="@+id/tv_tf_barang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

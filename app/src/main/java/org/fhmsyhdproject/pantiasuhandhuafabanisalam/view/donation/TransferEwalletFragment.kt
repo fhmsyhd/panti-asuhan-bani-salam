@@ -22,6 +22,8 @@ import com.downloader.PRDownloader
 import com.downloader.PRDownloaderConfig
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.databinding.FragmentTransferEwalletBinding
 import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.DownloadImage
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.utils.payment.PaymentMidtrans
+import org.fhmsyhdproject.pantiasuhandhuafabanisalam.view.donation.needs.NeedsActivity
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL
@@ -36,43 +38,18 @@ class TransferEwalletFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentTransferEwalletBinding.inflate(inflater, container, false)
 
-        binding.btnTest.setOnClickListener {
-            openWhatsapp()
+        binding.btnDonasi.setOnClickListener {
+            val intent = Intent(requireContext(), PaymentMidtrans::class.java)
+            startActivity(intent)
         }
 
         return binding.root
     }
-
-    private fun openWhatsapp(){
-        try {
-            val sendIntent = Intent().apply {
-                action = Intent.ACTION_SEND
-//                putExtra(Intent.EXTRA_TEXT, "Assalamualaikum Wr. Wb. Panti Asuhan Bani salam. Saya dapat kontak panti dari aplikasi Bani Salam...")
-//                putExtra("jid", "${number}@s.whatsapp.net")
-                type = "text/plain"
-                setPackage("ovo.id")
-            }
-            startActivity(sendIntent)
-        }catch (e: Exception){
-            e.printStackTrace()
-            val appPackageName = "ovo.id"
-            try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$appPackageName")))
-            } catch (e: android.content.ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
-            }
-        }
-    }
-
-
 }
